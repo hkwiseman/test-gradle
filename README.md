@@ -1,6 +1,6 @@
 # Gradle Demo Project with Jackson Core
 
-This is a demo Gradle project using Jackson Core version 2.14.1.
+This is a demo Gradle project using Jackson Core version 2.17.3.
 
 ## Building the Project
 
@@ -22,6 +22,6 @@ Or run the main class directly:
 
 ## Dependencies
 
-- Jackson Core: 2.14.1
+- Jackson Core: 2.17.3
 - JUnit 5 (for testing)
 

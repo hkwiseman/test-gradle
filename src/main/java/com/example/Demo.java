@@ -10,7 +10,7 @@ import java.io.StringWriter;
 public class Demo {
     public static void main(String[] args) {
         System.out.println("Jackson Core Demo");
-        System.out.println("Version: 2.14.1");
+        System.out.println("Version: 2.17.3");
         
         // Create a JSON factory
         JsonFactory factory = new JsonFactory();
@@ -22,7 +22,7 @@ public class Demo {
             
             generator.writeStartObject();
             generator.writeStringField("message", "Hello from Jackson Core!");
-            generator.writeNumberField("version", 2.14);
+            generator.writeNumberField("version", 2.17);
             generator.writeEndObject();
             generator.close();
             
@@ -36,7 +36,12 @@ public class Demo {
                 JsonToken token = parser.currentToken();
                 if (token == JsonToken.FIELD_NAME) {
                     System.out.println("Field: " + parser.getCurrentName());
-                } else if (token.isValue()) {
+                } else if (token == JsonToken.VALUE_STRING || 
+                          token == JsonToken.VALUE_NUMBER_INT || 
+                          token == JsonToken.VALUE_NUMBER_FLOAT ||
+                          token == JsonToken.VALUE_TRUE ||
+                          token == JsonToken.VALUE_FALSE ||
+                          token == JsonToken.VALUE_NULL) {
                     System.out.println("Value: " + parser.getValueAsString());
                 }
             }
