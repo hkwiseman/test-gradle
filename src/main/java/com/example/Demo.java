@@ -10,7 +10,7 @@ import java.io.StringWriter;
 public class Demo {
     public static void main(String[] args) {
         System.out.println("Jackson Core Demo");
-        System.out.println("Version: 2.17.3");
+        System.out.println("Version: 2.14.1");
         
         // Create a JSON factory
         JsonFactory factory = new JsonFactory();
@@ -22,7 +22,7 @@ public class Demo {
             
             generator.writeStartObject();
             generator.writeStringField("message", "Hello from Jackson Core!");
-            generator.writeNumberField("version", 2.17);
+            generator.writeNumberField("version", 2.14);
             generator.writeEndObject();
             generator.close();
             
